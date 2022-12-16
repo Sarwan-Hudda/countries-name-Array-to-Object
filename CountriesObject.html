@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = [
+        "america",
+        "Bolivia",
+        "Bhutan",
+        "Costa Rica",
+        "bangladesh",
+        "Canada",
+        "Denmark",
+        "Egypt",
+        "Ethopia",
+      ];
+      // const obj = Object.assign({},input);
+      output = {};
+      input.forEach((country) => {
+        let firstlatter = country.toLowerCase().slice(0, 1);
+
+        if (Object.keys(output).includes(firstlatter)) {
+          output[firstlatter] = [...output[firstlatter], country];
+        } else {
+          output[firstlatter] = [country];
+        }
+      });
+
+      console.log(output);
+    </script>
+  </body>
+</html>
